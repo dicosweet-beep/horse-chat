@@ -56,7 +56,7 @@ else:
                 model="gpt-4o-mini",
                 messages=st.session_state.messages
             )
-            ai_text = response.choices.message.content
+            ai_text = response.choices[0].message.content
             st.write(ai_text)
             st.session_state.messages.append({"role": "assistant", "content": ai_text})
             
